@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstring>
+#include <cstdio>
+
+using namespace std;
+
+int main() {
+	// your code goes here
+	
+	char a[1000000];
+	int s=0,k=0;
+	long long int l=0;
+  scanf("%s",a);
+	for(int i=0;i<strlen(a);i++)
+	{
+		s=s+a[i]-'0';
+	}
+	l++;
+	while(s>=10)
+	{
+	 k=0;
+		l++;
+		while(s>0)
+		{
+			int t=s%10;
+			s=s/10;
+			k=k+t;
+			
+		}
+		s=k; 
+	}
+	
+	if(strlen(a)==1)
+	{
+		l=0;
+	}
+	
+	cout<<l;
+	
+	return 0;
+}
