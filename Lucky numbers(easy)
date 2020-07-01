@@ -1,0 +1,116 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+
+long long int n, a, nof=0, nos=0, nod=0,k,i=0,l=0;
+cin>>n;
+a=n;
+while(a!=0) 
+{
+ if(a%10==4) 
+ nof++;
+
+ if(a%10==7) 
+ nos++;
+
+ nod++;
+a=a/10;
+}
+
+for(int I=0;I<nod/2;I++) 
+{
+l=l+7;
+ l=l*10;
+}
+for(int g=0;g<nod/2;g++) 
+{
+l=l+4;
+ l=l*10;
+}
+l=l/10;
+
+if((nof==nos) &&(nof+nos==nod)) 
+{
+ cout<<n;
+}
+
+
+else
+{
+ while(1) 
+ {
+
+i++;
+if((nod%2!=0)||(n>l)) 
+{
+n=0;
+for(int g=0;g<=nod/2;g++) 
+{
+n=n+4;
+ n=n*10;
+}
+
+for(int g=0;g<=nod/2;g++) 
+{
+n=n+7;
+ n=n*10;
+}
+n=n/10;
+n=n-i;
+//cout<<nod<<" ";
+}
+
+if(nod==10) 
+{
+ n=0;
+for(int g=0;g<nod/2;g++) 
+{
+n=n+4;
+ n=n*10;
+}
+
+for(int g=0;g<nod/2;g++) 
+{
+n=n+7;
+ n=n*10;
+}
+n=n/10;
+n=n-i;
+}
+
+
+
+
+nof=0, nos=0, nod=0;
+  a=a+i+n;
+k=a;
+  while(a != 0) 
+{
+ if(a%10==4) 
+ nof++;
+
+ if(a%10==7) 
+ nos++;
+
+ nod++;
+a=a/10;
+}
+
+if((nof==nos) &&(nof+nos==nod)) 
+{
+ cout<<k;
+ break;
+}
+
+ }
+}
+
+
+
+
+
+	return 0;
+}
