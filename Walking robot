@@ -1,0 +1,60 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+
+ int n, mb, macc, l=0;
+ cin>>n>>mb>>macc;
+int b=mb, acc=macc, a[n];
+
+ for(int I=0;I<n;I++) 
+ {cin>>a[I];}
+
+ for(int h=0;h<n;h++) 
+{
+ if(a[h]==0) 
+ {
+  if(acc>0) 
+  {acc--;
+   l++;}
+  
+  else if((acc==0) &&(b>0)) 
+  {b--;
+   l++;}
+
+  else 
+   break;
+
+}
+
+
+else//a==1
+{
+ if(b>0) 
+ { if(acc<macc) 
+   {acc++;
+    b--;
+    l++;}
+
+ else
+{acc--;
+ l++;}
+ }
+
+
+ else if((b==0) &&(acc>0)) 
+ {
+ acc--;
+ l++;
+ }
+
+ else 
+ {break;}
+
+}
+}
+cout<<l;
+
+	return 0;
+}
