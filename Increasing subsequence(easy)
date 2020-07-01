@@ -1,0 +1,89 @@
+#include <iostream>
+using namespace std;
+ 
+int main() {
+	// your code goes here
+ 
+   int n;
+   cin>>n;
+   int a[1000002];
+   char move[1000002];
+for(int I=0;I<n;I++) 
+ 
+cin>>a[I];
+ 
+    int i=0, l=0,f=0,j=0;
+char y;
+ 
+while(1) {
+if(a[i]<a[n-1])
+{
+ 
+if(f<a[i]) 
+{
+l++;
+move[j++]='L';
+f=a[i];
+i++;}
+ 
+else if((f>a[i])&&(f<a[n-1]))
+{
+l++;
+ move[j++]='R';
+ f=a[n-1];
+ n=n-1;
+}
+}
+ 
+else if(a[n-1]<a[i]) 
+{
+ 
+if(f<a[n-1]) 
+{
+ l++;
+ move[j++]='R';
+ f=a[n-1];
+ n=n-1;
+}
+ 
+else if((f>a[n-1])&&(f<a[i]))
+{
+l++;
+move[j++]='L';
+f=a[i];
+i++;
+}
+}
+
+else
+break;
+
+if((f>a[i])&&(f>a[n-1]))
+{
+	break;
+}
+//else if((i==n-1) &&(f<a[n-1]) ) 
+//{
+//  l++;
+ //y=move[j-1];
+//cout<<y;
+//j++;
+ //move[j++]=y;
+//}
+ 
+}
+if((i==n-1) &&(f<a[i])) 
+{l++;
+ if(i!=0)
+ move[j]=move[j-1];
+ else
+ move[j]='L';
+j++;
+}
+ 
+move[j]='\0';
+cout<<l<<endl;
+ 
+cout<<move;
+	return 0;
+}
